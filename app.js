@@ -24,17 +24,7 @@ const port = process.env.port || 3000;
 app.listen(port, ()=>{
   console.log(`App running on port ${port}....`);
 
-  /**
- * @swagger
- * /books:
- *   get:
- *     description: Get all books
- *     responses:
- *       200:
- *         description: Success
- * 
- * 
- */
+
 app.get('/books', (req, res) => {
   res.send([
     {
