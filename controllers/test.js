@@ -1,4 +1,5 @@
-const {userModel}=require('../models/test');
+//const {userModel}=require('../models/test');
+const {userModel,projectModel} = require('../models/woklogmodels');
 
 
 exports.userLogin = async (req,res)=>{
@@ -48,3 +49,4 @@ exports.users = async (req,res)=>{
         )
     }
 }
+
