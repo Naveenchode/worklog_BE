@@ -57,7 +57,7 @@ exports.addLog = async (req,res)=>{
         }        });
         console.log(log)
         if(log.modifiedCount>0){
-            res.send("ok")
+            res.send({status:"ok"})
         }else{
             res.send("fail")
         }
