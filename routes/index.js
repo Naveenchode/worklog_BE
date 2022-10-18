@@ -8,6 +8,8 @@ const worklogService = require('../controllers/worklogcontrollers');
 router.get('/users',userService.users);
 router.get('/getprojects',worklogService.getprojects);
 router.post('/getprojectdetails/:projectId',worklogService.getprojectdetails);
+router.post('/addLog/:projectId',worklogService.addLog);
+
 router.get('/', function(req, res, next) {
   res.send("Hello");
 });

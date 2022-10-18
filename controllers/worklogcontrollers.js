@@ -41,3 +41,33 @@ exports.getprojectdetails = async (req,res)=>{
         )
     }
 }
+
+exports.addLog = async (req,res)=>{
+    try{
+        const log = await projectModel.updateOne( {
+            projectId:req.params.projectId
+           //projectId:'9'
+        },{$push:{ logs:{
+            date:req.body.date,
+            workers:req.body.workers,
+            pay:req.body.paid,
+            comments:req.body.comments
+        }
+
+        }        });
+        console.log(log)
+        if(log.modifiedCount>0){
+            res.send("ok")
+        }else{
+            res.send("fail")
+        }
+
+
+    }catch(err){
+        res.status(400).json(
+            {
+                message:err,
+            }
+        )
+    }
+}
